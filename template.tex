@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[$fontsize$, a4paper]{article}
+\documentclass[$fontsize$, letterpaper]{article}
 \usepackage{fontspec}
 
 % LAYOUT
@@ -20,9 +20,12 @@
 \setlist{nolistsep}
 
 $if(letterhead)$
+\IfFileExists{$letterhead$}
+{
 \usepackage{wallpaper}
 % \ThisULCornerWallPaper{1}{letterhead-front.pdf} % Uncomment to include a different letterhead on the first page
-\ULCornerWallPaper{1}{letterhead.pdf}
+\ULCornerWallPaper{1}{$letterhead$}
+}
 $endif$
 
 % LANGUAGE
@@ -117,10 +120,10 @@ $endif$
 
 $body$
 
-\IfFileExists{signature.pdf}
+\IfFileExists{/Users/jbaty/.pandoc/graphics/signature.pdf}
 {
     \begin{FlushRight}
-      \includegraphics[height=5.5\baselineskip]{signature.pdf} \par
+      \includegraphics[height=5.5\baselineskip]{/Users/jbaty/.pandoc/graphics/signature.pdf} \par
       $author$
     \end{FlushRight}
 }

@@ -1,3 +1,25 @@
+---
+# subject: My life as a soldier
+author: Jack Baty
+city: Grand Rapids
+from:
+- 2408 Elderwood NW
+- Grand Rapids, MI 49544
+to:
+- Carl Freiherr von Gersdorff
+- 1234 Anystreet
+- Sometown, MI 49503
+
+# Settings
+mainfont: Hoefler Text
+altfont: Helvetica Neue
+monofont: Courier
+lang: english
+fontsize: 10pt
+geometry: a4paper, left=35mm, right=35mm, top=50mm, bottom=25mm
+letterhead: /Users/jbaty/.pandoc/graphics/jackbaty-letterhead.pdf
+---
+
 Dear Friend,
 
 I am a bombardier in the second mounted division of the Fourth Horse Artillery.
