@@ -20,12 +20,9 @@
 \setlist{nolistsep}
 
 $if(letterhead)$
-\IfFileExists{$letterhead$}
-{
 \usepackage{wallpaper}
 % \ThisULCornerWallPaper{1}{letterhead-front.pdf} % Uncomment to include a different letterhead on the first page
-\ULCornerWallPaper{1}{$letterhead$}
-}
+\ULCornerWallPaper{1}{letterhead.pdf}
 $endif$
 
 % LANGUAGE
@@ -81,11 +78,10 @@ $endif$
 }
 
 % To display custom date in the example
-% \usepackage[nodayofweek]{datetime}
-% \newdate{date}{01}{12}{1867}
-% \date{\displaydate{date}}
-% Use this instead of \today
-% \displaydate{date}
+$if(customdate)$
+\usepackage[$lang$]{datetime2}
+\DTMsavedate{customdate}{$customdate$}
+$endif$
 
 % DOCUMENT
 %--------------------------------
@@ -107,25 +103,28 @@ $endfor$
 
 \rmfamily
 \begin{flushright}
-  $city$, \today
+  $city$, $if(customdate)$\DTMusedate{customdate}$else$\today$endif$
 \end{flushright}
 
 \vspace{1em}
 
 $if(subject)$
-\textbf{Subject: $subject$}
+\textbf{$subject$}
 $endif$
 
 \vspace{1em}
 
 $body$
 
-\IfFileExists{/Users/jbaty/.pandoc/graphics/signature.pdf}
-{
-    \begin{FlushRight}
-      \includegraphics[height=5.5\baselineskip]{/Users/jbaty/.pandoc/graphics/signature.pdf} \par
-      $author$
-    \end{FlushRight}
-}
+\begin{FlushRight}
+  \IfFileExists{signature.pdf}
+  {
+    \includegraphics[height=5.5\baselineskip]{signature.pdf} \par
+  }
+  {
+    \vspace{5.5\baselineskip}
+  }
+  $author$
+\end{FlushRight}
 
 \end{document}
