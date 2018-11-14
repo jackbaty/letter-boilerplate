@@ -1,10 +1,10 @@
 ---
-subject: My life as a soldier
+# subject: My life as a soldier
 author: Jack Baty
 city: Grand Rapids
 from:
-- 2408 Elderwood NW
-- Grand Rapids, MI 49544
+- 5455 Longwood Ct.
+- Ada, MI 49301
 to:
 - Carl Freiherr von Gersdorff
 - Stresow-Kaserne I
